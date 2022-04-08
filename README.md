@@ -2,7 +2,7 @@
 
 This sample will show you to easily read your email with the Nylas Python SDK.
 
-You can follow along step-by-step in our blog post ["How to Read Emails with the Nylas Python SDK"](https://www.nylas.com/blog/how-to-read-emails-with-the-nylas-python-sdk/).
+You can follow along step-by-step in our blog post ["How to Read Emails with the Nylas Python SDK"](https://www.nylas.com/blog/how-to-read-email-inbox-data-with-nylas-python-sdk/).
 
 ## Setup
 
