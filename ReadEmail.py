@@ -1,24 +1,26 @@
-# Load your env variables
+# Import dependencies
+from nylas import Client
 from dotenv import load_dotenv
+import os
+from nylas.models.messages import ListMessagesQueryParams
+
+# Load our .env file
 load_dotenv()
 
-# Import your dependencies
-import os
-from nylas import APIClient
-import datetime
-
-# Initialize your Nylas API client
-nylas = APIClient(
-    os.environ.get("CLIENT_ID"),
-    os.environ.get("CLIENT_SECRET"),
-    os.environ.get("ACCESS_TOKEN"),
+# Initialize Nylas client
+nylas = Client(
+    api_key = os.environ.get("V3_API_KEY")
 )
 
-# Get the first five emails
-messages = nylas.messages.where(limit=5)
-# Read each email
+# Create query parameters
+query_params = ListMessagesQueryParams(
+	{'in' : "inbox",
+	'limit': 5}
+)
+
+# Read emails
+messages, _, _ = nylas.messages.list(os.environ.get("GRANT_ID"), query_params)
+
+# Print emails information
 for message in messages:
-# Change time to a readable format
-	date = datetime.datetime.fromtimestamp(message.date)
-# Print date and subject of email
-	print("[{}] {}".format(date, message.subject))
+    print(f"[{message.date}] {message.subject}")
