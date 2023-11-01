@@ -2,8 +2,6 @@
 
 This sample will show you to easily read your email with the Nylas Python SDK.
 
-You can follow along step-by-step in our blog post ["How to Read Emails with the Nylas Python SDK"](https://www.nylas.com/blog/how-to-read-email-inbox-data-with-nylas-python-sdk/).
-
 ## Setup
 
 ### System dependencies
@@ -15,10 +13,9 @@ You can follow along step-by-step in our blog post ["How to Read Emails with the
 You'll need the following values:
 
 ```text
-ACCESS_TOKEN = ""
-CLIENT_ID = ""
-CLIENT_SECRET = ""
-RECIPIENT_ADDRESS = ""
+V3_TOKEN =
+GRANT_ID =
+V3_HOST = 
 ```
 
 Add the above values to a new `.env` file:
@@ -31,21 +28,21 @@ $ touch .env # Then add your env variables
 
 ```bash
 $ pip3 install nylas
+$ pip3 install dotenv
 ```
 
 ## Usage
 
-Run the script using the `python3` command:
+Run the script using the `ruby` command:
 
 ```bash
-$ python3 SendEmail.py
+$ python3 ReadEmails.py
 ```
 
-When your message is successfully sent, you'll get the following output in your terminal:
+You will get a list of your emails in the following format
 
 ```text
-[4/7/YYYY] Here's an email subject
-[4/6/YYYY] Another subject
+[2023-11-22] It's Blag's birthday!
 ```
 
 ## Learn more
